@@ -29,11 +29,41 @@ public class Main {
 
     public static void main(String[] args) {
         //	Replace this with your dry inventory function!
-        wet_inventory();
+        //wet_inventory();
+        dry_inventory();
     }
 
     static void dry_inventory() {
         // Your DRY Solution goes here!
+        //Create dictionary that bookmarks each sale
+        //Loop through the dictionary, aubtract sales items, and sum up cash
+        //sum up tips
+
+        import java.util.Hashmap;
+        HashMap<Integer, Double, Integer, Double, Double> map = new HashMap<>();
+        map.put(4,8,1,8,4);
+        map.put(2,4,3,24,0);
+        map.put(3,6,0,0,0);
+        map.put(1,2,2,16,0);
+        map.put(0,0,6,48,10);
+        map.put(0,0,4,32,5);
+        map.put(2,4,0,0,0);
+        map.put(10,20,8,64,10);
+        map.put(6,12,0,0,0);
+        map.put(0,0,1,8,0);
+        map.put(1,2,0,0,0);
+        map.put(0,0,7,56,4);
+        map.put(2,4,0,0,0);
+        map.put(6,12,3,24,0);
+        map.put(9,18,2,16,3);
+
+        for()
+        
+        System.out.println("Results for the hour!");
+        System.out.println("Lemonades Inventory: " + lemonades_available);
+        System.out.println("Pretzels Inventory: " + pretzels_available);
+        System.out.println("Cash: " + cash);
+        System.out.println("Tips: " + tips);
     }
 
     static void wet_inventory() {
