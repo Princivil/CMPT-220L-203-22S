@@ -6,7 +6,7 @@ public class Plant {
     String name;
 
 
-    public Plant(boolan needsWatering, String plantFamily, String name){
+    public Plant(boolean needsWatering, String plantFamily, String name){
         this.needsWatering = true;
         this.plantFamily = plantFamily;
         this.name = name;
