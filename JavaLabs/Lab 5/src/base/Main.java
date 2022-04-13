@@ -1,5 +1,6 @@
 package base;
 
+
 public class Main {
     /**
      * In our Assignment here we're running a little lemonade stand and we also sell pretzels. We need to keep track of
@@ -21,138 +22,127 @@ public class Main {
      * Pretzels are $2 for 1
      * Lemonade is $8 for 1
      */
-    static int lemonades_available = 43;
-    static int pretzels_available = 60;
+    static int lemonadesAvailable = 43;
+    static int pretzelsAvailable = 60;
     static double cash = 1500.0;
     static double tips = 0.0;
 
 
     public static void main(String[] args) {
         //	Replace this with your dry inventory function!
-        //wet_inventory();
-        dry_inventory();
+        dryInventory();
     }
 
-    static void dry_inventory() {
-        // Your DRY Solution goes here!
-        //Create dictionary that bookmarks each sale
-        //Loop through the dictionary, aubtract sales items, and sum up cash
-        //sum up tips
+    static void dryInventory() {
+        /**create arrays for each component
+         * loop through each array to come up with totals
+         */
+      int[] lemonade = {1, 3, 2, 6, 4, 8, 1, 7, 3, 2,0,0,0,0,0,0,0,0,0,0};
+      int[] pretzels = {4, 2, 3, 1, 2, 10, 6, 1, 2, 6, 9,0,0,0,0,0,0,0,0,0};
+      double[] money = {8, 4, 24, 6, 2, 16, 48, 32, 4, 20, 64, 12, 8, 2, 56, 4, 12, 24, 18, 16};
+      double[] jar = {4, 10, 5, 10, 4, 3,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-        import java.util.Hashmap;
-        HashMap<Integer, Double, Integer, Double, Double> map = new HashMap<>();
-        map.put(4,8,1,8,4);
-        map.put(2,4,3,24,0);
-        map.put(3,6,0,0,0);
-        map.put(1,2,2,16,0);
-        map.put(0,0,6,48,10);
-        map.put(0,0,4,32,5);
-        map.put(2,4,0,0,0);
-        map.put(10,20,8,64,10);
-        map.put(6,12,0,0,0);
-        map.put(0,0,1,8,0);
-        map.put(1,2,0,0,0);
-        map.put(0,0,7,56,4);
-        map.put(2,4,0,0,0);
-        map.put(6,12,3,24,0);
-        map.put(9,18,2,16,3);
-
-        for()
+      for (int i=0; i<lemonade.length; i++){
+        lemonadesAvailable = lemonadesAvailable - lemonade[i];
+        pretzelsAvailable = pretzelsAvailable - pretzels[i];
+        cash = cash + money[i];
+        tips = tips + jar[i];
+        }
         
         System.out.println("Results for the hour!");
-        System.out.println("Lemonades Inventory: " + lemonades_available);
-        System.out.println("Pretzels Inventory: " + pretzels_available);
-        System.out.println("Cash: " + cash);
-        System.out.println("Tips: " + tips);
+        System.out.println("Lemonades Inventory: " + lemonadesAvailable);
+        System.out.println("Pretzels Inventory: " + pretzelsAvailable);
+        System.out.println("Cash: $" + cash);
+        System.out.println("Tips: $" + tips);
     }
 
-    static void wet_inventory() {
+    static void wetInventory() {
         /**
          * We have 10 customers in the first hour! This is what they bought! When running this with your dry code you
          * don't want to run this function because then the numbers in the end will be wrong!
          */
         //Customer 1
-        pretzels_available -= 4;
+        pretzelsAvailable -= 4;
         cash += 8;
-        lemonades_available -= 1;
+        lemonadesAvailable -= 1;
         cash += 8;
         tips += 4;
 
         //Customer 2
-        pretzels_available -= 2;
+        pretzelsAvailable -= 2;
         cash += 4;
-        lemonades_available -= 3;
+        lemonadesAvailable -= 3;
         cash += 24;
 
         //Customer 3
-        pretzels_available -= 3;
+        pretzelsAvailable -= 3;
         cash += 6;
 
         //Customer 4
-        pretzels_available -= 1;
+        pretzelsAvailable -= 1;
         cash += 2;
-        lemonades_available -= 2;
+        lemonadesAvailable -= 2;
         cash += 16;
 
         //Customer 5
-        lemonades_available -= 6;
+        lemonadesAvailable -= 6;
         cash += 48;
         tips += 10;
 
         //Customer 6
-        lemonades_available -= 4;
+        lemonadesAvailable -= 4;
         cash += 32;
         tips += 5;
 
         //Customer 7
-        pretzels_available -= 2;
+        pretzelsAvailable -= 2;
         cash += 4;
 
         //Customer 8
-        pretzels_available -= 10;
+        pretzelsAvailable -= 10;
         cash += 20;
-        lemonades_available -= 8;
+        lemonadesAvailable -= 8;
         cash += 64;
         tips += 10;
 
 
         //Customer 9
-        pretzels_available -= 6;
+        pretzelsAvailable -= 6;
         cash += 12;
 
         //Customer 10
-        lemonades_available -= 1;
+        lemonadesAvailable -= 1;
         cash += 8;
 
         //Customer 11
-        pretzels_available -= 1;
+        pretzelsAvailable -= 1;
         cash += 2;
 
         //Customer 12
-        lemonades_available -= 7;
+        lemonadesAvailable -= 7;
         cash += 56;
         tips += 4;
 
         //Customer 13
-        pretzels_available -= 2;
+        pretzelsAvailable -= 2;
         cash += 4;
 
         //Customer 14
-        pretzels_available -= 6;
+        pretzelsAvailable -= 6;
         cash += 12;
-        lemonades_available -= 3;
+        lemonadesAvailable -= 3;
         cash += 24;
 
         //Customer 15
-        pretzels_available -= 9;
+        pretzelsAvailable -= 9;
         cash += 18;
-        lemonades_available -= 2;
+        lemonadesAvailable -= 2;
         cash += 16;
         tips += 3;
 
         System.out.println("Results for the hour!");
-        System.out.println("Lemonades Inventory: " + lemonades_available);
-        System.out.println("Pretzels Inventory: " + pretzels_available);
+        System.out.println("Lemonades Inventory: " + lemonadesAvailable);
+        System.out.println("Pretzels Inventory: " + pretzelsAvailable);
         System.out.println("Cash: " + cash);
         System.out.println("Tips: " + tips);
     }
